@@ -161,13 +161,13 @@ function register_tax_lsb_topic() {
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
-		'id' => 'lsb_book_meta',
+		'id' => 'lsb_acf_book_meta',
 		'title' => 'Bokmeta',
 		'fields' => array (
 			array (
-				'key' => 'lsb_isbn',
+				'key' => 'lsb_acf_isbn',
 				'label' => 'ISBN',
-				'name' => 'isbn',
+				'name' => 'lsb_isbn',
 				'type' => 'text',
 				'required' => 1,
 				'default_value' => '',
@@ -178,9 +178,9 @@ if(function_exists("register_field_group"))
 				'maxlength' => '',
 			),
 			array (
-				'key' => 'lsb_published_year',
+				'key' => 'lsb_acf_published_year',
 				'label' => 'Publisert',
-				'name' => 'published_year',
+				'name' => 'lsb_published_year',
 				'type' => 'text',
 				'instructions' => 'Året boken ble publisert',
 				'required' => 1,
@@ -192,9 +192,9 @@ if(function_exists("register_field_group"))
 				'maxlength' => '',
 			),
 			array (
-				'key' => 'lsb_pages',
+				'key' => 'lsb_acf_pages',
 				'label' => 'Pages',
-				'name' => 'pages',
+				'name' => 'lsb_pages',
 				'type' => 'text',
 				'instructions' => 'Antall sider',
 				'required' => 1,
@@ -206,25 +206,25 @@ if(function_exists("register_field_group"))
 				'maxlength' => '',
 			),
 			array (
-				'key' => 'lsb_supported',
+				'key' => 'lsb_acf_supported',
 				'label' => 'Støttet av Leser søker bok?',
-				'name' => 'supported',
+				'name' => 'lsb_supported',
 				'type' => 'true_false',
 				'required' => 1,
 				'message' => '',
 				'default_value' => 0,
 			),
 			array (
-				'key' => 'lsb_support_cat',
+				'key' => 'lsb_acf_support_cat',
 				'label' => 'Støttekategori',
-				'name' => 'support_cat',
+				'name' => 'lsb_support_cat',
 				'type' => 'radio',
 				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'lsb_supported',
+							'field' => 'lsb_acf_supported',
 							'operator' => '==',
 							'value' => '1',
 						),
@@ -269,22 +269,22 @@ if(function_exists("register_field_group"))
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
-		'id' => 'lsb_content',
+		'id' => 'lsb_acf_content',
 		'title' => 'Anmeldelse',
 		'fields' => array (
 			array (
-				'key' => 'lsb_review',
+				'key' => 'lsb_acf_review',
 				'label' => 'Anmeldelse',
-				'name' => 'review',
+				'name' => 'lsb_review',
 				'type' => 'wysiwyg',
 				'default_value' => '',
 				'toolbar' => 'full',
 				'media_upload' => 'no',
 			),
 			array (
-				'key' => 'lsb_quote',
+				'key' => 'lsb_acf_quote',
 				'label' => 'Utdrag fra boken',
-				'name' => 'quote',
+				'name' => 'lsb_quote',
 				'type' => 'wysiwyg',
 				'default_value' => '',
 				'toolbar' => 'basic',
