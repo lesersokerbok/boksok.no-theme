@@ -161,7 +161,26 @@ footer {
    Media Queries
    ========================================================================== */
 
-@media (min-width: @screen-sm-min) { }
+@media (max-width: @screen-sm-max) {
+
+  .page-header {
+    text-align: left;
+    padding: 0 15px;
+  }
+
+  .archive article {
+    width: auto;
+  }
+
+  .single article {
+
+    .entry-image, header, .entry-content {
+      width: 100%;
+      float: none;
+    }
+
+  }
+}
 
 @media (min-width: @screen-md-min) { }
 
