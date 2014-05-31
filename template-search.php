@@ -8,8 +8,8 @@ Template Name: Book Search
   <?php get_search_form(); ?>
 
   <p>eller hopp rett til bøker for</p>
-  <a class="filter" href="/filter/lesevansker">Lesevansker</a>
-  <a class="filter" href="/filter/ny-i-norge">Nye i Norge</a>
+  <a class="filter" href="/bok">Lesevansker</a>
+  <a class="filter" href="/bok">Nye i Norge</a>
   <a class="filter" href="/not">Demente</a>
   <a class="filter" href="/not">Svaksynte</a>
   <a class="filter" href="/not">Utviklingshemmede</a>
