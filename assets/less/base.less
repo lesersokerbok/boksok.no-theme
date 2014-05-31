@@ -1,0 +1,151 @@
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+@font-size-base:        16px;
+
+@font-size-x-small:     ceil((@font-size-base * 0.8));
+@blockquote-font-size:  @font-size-base;
+@basic-border:          1px solid @page-header-border-color;
+
+code {
+  white-space: pre-wrap;
+}
+
+input#submit {
+  .btn;
+  .btn-default;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   Fixed Navbar
+   ========================================================================== */
+
+.fixed-navbar-body-padding {
+
+  //Inlude this in app.less under body when using navbar-fixed-top
+
+  padding-top: @navbar-height+@navbar-margin-bottom*2;
+
+  &.admin-bar {
+    // When loggeed in the navbar will not be fixed, but viewable.
+    position: relative;
+
+    .navbar-fixed-top {
+      position: absolute; /* position relative to body, not page */
+    }
+
+  }
+}
+
+/* ==========================================================================
+   Primary Content
+   ========================================================================== */
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+.sidebar {
+
+  @media (min-width: @grid-float-breakpoint) {
+    //Only add if sidebar is still on the side of the page
+    padding-left: @grid-gutter-width;
+    border-left: @basic-border;
+  }
+
+  font-size: @font-size-small;
+
+  h3 {
+    padding-bottom: @line-height-computed;
+    margin: (@line-height-computed * 2) 0 @line-height-computed;
+    border-bottom: @basic-border;
+    font-size: @font-size-base;
+
+
+    a {
+      color: inherit;
+    }
+  }
+
+  ul {
+    margin: 0 0 0 1em;
+    padding: 0;
+
+    li {
+      margin: (@line-height-computed / 4) 0;
+    }
+  }
+
+  .widget_rss {
+
+    h3 a img {
+      display: none;
+    }
+
+    ul {
+      margin: 0;
+
+      li {
+        list-style: none;
+        margin: (@line-height-computed / 2) 0;
+
+        span, cite, a {
+          display: block;
+        }
+
+        a, div {
+          margin: (@line-height-computed / 4) 0;
+        }
+
+        span, cite, div {
+          font-size: @font-size-x-small;
+        }
+
+        cite:before {
+          content: "— ";
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.content-info {
+  padding-top: (@line-height-computed);
+  margin-top: (@line-height-computed * 2);
+  margin-bottom: (@line-height-computed * 2);
+  border-top: @basic-border;
+}
+
+/* ==========================================================================
+   WordPress Generated Classes
+   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+   ========================================================================== */
+
+.aligncenter {
+  display: block;
+  margin: (@line-height-computed / 2) auto;
+}
+
+.alignleft {
+  float: left;
+  margin: (@line-height-computed / 2) @line-height-computed (@line-height-computed / 2) 0;
+}
+
+.alignright {
+  float: right;
+  margin: (@line-height-computed / 2) 0 (@line-height-computed / 2) @line-height-computed;
+}
+
+figure.alignnone {
+  margin-left: 0;
+  margin-right: 0;
+}
