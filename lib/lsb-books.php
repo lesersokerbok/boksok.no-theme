@@ -4,6 +4,7 @@ add_action('init', 'register_post_type_lsb_book');
 add_action('init', 'register_tax_lsb_author');
 add_action('init', 'register_tax_lsb_illustrator');
 add_action('init', 'register_tax_lsb_publisher');
+add_action('init', 'register_tax_lsb_genre');
 add_action('init', 'register_tax_lsb_age');
 add_action('init', 'register_tax_lsb_topic');
 
@@ -114,6 +115,35 @@ function register_tax_lsb_publisher() {
       'show_admin_column' => false,
       'labels' => array (
         'search_items' => 'Forlag',
+        'popular_items' => '',
+        'all_items' => '',
+        'parent_item' => '',
+        'parent_item_colon' => '',
+        'edit_item' => '',
+        'update_item' => '',
+        'add_new_item' => '',
+        'new_item_name' => '',
+        'separate_items_with_commas' => '',
+        'add_or_remove_items' => '',
+        'choose_from_most_used' => '',
+      )
+    )
+  );
+}
+
+function register_tax_lsb_genre() {
+  register_taxonomy( 'lsb_tax_genre',
+    array(
+      0 => 'lsb_book',
+    ),
+    array( 'hierarchical' => true,
+      'label' => 'Sjanger',
+      'show_ui' => true,
+      'query_var' => true,
+      'rewrite' => array( 'slug' => 'sjanger' ),
+      'show_admin_column' => true,
+      'labels' => array (
+        'search_items' => 'Sjanger',
         'popular_items' => '',
         'all_items' => '',
         'parent_item' => '',
