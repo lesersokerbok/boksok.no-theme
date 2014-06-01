@@ -4,7 +4,11 @@ add_action('init', 'register_post_type_lsb_book');
 add_action('init', 'register_tax_lsb_author');
 add_action('init', 'register_tax_lsb_illustrator');
 add_action('init', 'register_tax_lsb_publisher');
+add_action('init', 'register_tax_lsb_genre');
+add_action('init', 'register_tax_lsb_age');
+add_action('init', 'register_tax_lsb_customization');
 add_action('init', 'register_tax_lsb_topic');
+add_action('init', 'register_tax_lsb_language');
 
 function register_post_type_lsb_book() {
   register_post_type('lsb_book',
@@ -129,6 +133,93 @@ function register_tax_lsb_publisher() {
   );
 }
 
+function register_tax_lsb_genre() {
+  register_taxonomy( 'lsb_tax_genre',
+    array(
+      0 => 'lsb_book',
+    ),
+    array( 'hierarchical' => true,
+      'label' => 'Sjanger',
+      'show_ui' => true,
+      'query_var' => true,
+      'rewrite' => array( 'slug' => 'sjanger' ),
+      'show_admin_column' => true,
+      'labels' => array (
+        'search_items' => 'Sjanger',
+        'popular_items' => '',
+        'all_items' => '',
+        'parent_item' => '',
+        'parent_item_colon' => '',
+        'edit_item' => '',
+        'update_item' => '',
+        'add_new_item' => '',
+        'new_item_name' => '',
+        'separate_items_with_commas' => '',
+        'add_or_remove_items' => '',
+        'choose_from_most_used' => '',
+      )
+    )
+  );
+}
+
+function register_tax_lsb_age() {
+  register_taxonomy( 'lsb_tax_age',
+    array(
+      0 => 'lsb_book',
+    ),
+    array( 'hierarchical' => true,
+      'label' => 'Alder',
+      'show_ui' => true,
+      'query_var' => true,
+      'rewrite' => array( 'slug' => 'alder' ),
+      'show_admin_column' => true,
+      'labels' => array (
+        'search_items' => 'Alder',
+        'popular_items' => '',
+        'all_items' => '',
+        'parent_item' => '',
+        'parent_item_colon' => '',
+        'edit_item' => '',
+        'update_item' => '',
+        'add_new_item' => '',
+        'new_item_name' => '',
+        'separate_items_with_commas' => '',
+        'add_or_remove_items' => '',
+        'choose_from_most_used' => '',
+      )
+    )
+  );
+}
+
+function register_tax_lsb_customization() {
+  register_taxonomy( 'lsb_tax_customization',
+    array(
+      0 => 'lsb_book',
+    ),
+    array( 'hierarchical' => true,
+      'label' => 'Tilpassning',
+      'show_ui' => true,
+      'query_var' => true,
+      'rewrite' => array( 'slug' => 'tilpassning' ),
+      'show_admin_column' => false,
+      'labels' => array (
+        'search_items' => 'Tilpassning',
+        'popular_items' => '',
+        'all_items' => '',
+        'parent_item' => '',
+        'parent_item_colon' => '',
+        'edit_item' => '',
+        'update_item' => '',
+        'add_new_item' => '',
+        'new_item_name' => '',
+        'separate_items_with_commas' => '',
+        'add_or_remove_items' => '',
+        'choose_from_most_used' => '',
+      )
+    )
+  );
+}
+
 function register_tax_lsb_topic() {
   register_taxonomy( 'lsb_tax_topic',
     array(
@@ -142,6 +233,35 @@ function register_tax_lsb_topic() {
     	'show_admin_column' => false,
     	'labels' => array (
         'search_items' => 'Emne',
+        'popular_items' => '',
+        'all_items' => '',
+        'parent_item' => '',
+        'parent_item_colon' => '',
+        'edit_item' => '',
+        'update_item' => '',
+        'add_new_item' => '',
+        'new_item_name' => '',
+        'separate_items_with_commas' => '',
+        'add_or_remove_items' => '',
+        'choose_from_most_used' => '',
+      )
+    )
+  );
+}
+
+function register_tax_lsb_language() {
+  register_taxonomy( 'lsb_tax_language',
+    array(
+      0 => 'lsb_book',
+    ),
+    array( 'hierarchical' => true,
+      'label' => 'Språk',
+      'show_ui' => true,
+      'query_var' => true,
+      'rewrite' => array( 'slug' => 'språk' ),
+      'show_admin_column' => false,
+      'labels' => array (
+        'search_items' => 'Språk',
         'popular_items' => '',
         'all_items' => '',
         'parent_item' => '',
