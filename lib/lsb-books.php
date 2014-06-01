@@ -6,6 +6,7 @@ add_action('init', 'register_tax_lsb_illustrator');
 add_action('init', 'register_tax_lsb_publisher');
 add_action('init', 'register_tax_lsb_genre');
 add_action('init', 'register_tax_lsb_age');
+add_action('init', 'register_tax_lsb_customization');
 add_action('init', 'register_tax_lsb_topic');
 add_action('init', 'register_tax_lsb_language');
 
@@ -174,6 +175,35 @@ function register_tax_lsb_age() {
       'show_admin_column' => true,
       'labels' => array (
         'search_items' => 'Alder',
+        'popular_items' => '',
+        'all_items' => '',
+        'parent_item' => '',
+        'parent_item_colon' => '',
+        'edit_item' => '',
+        'update_item' => '',
+        'add_new_item' => '',
+        'new_item_name' => '',
+        'separate_items_with_commas' => '',
+        'add_or_remove_items' => '',
+        'choose_from_most_used' => '',
+      )
+    )
+  );
+}
+
+function register_tax_lsb_customization() {
+  register_taxonomy( 'lsb_tax_customization',
+    array(
+      0 => 'lsb_book',
+    ),
+    array( 'hierarchical' => true,
+      'label' => 'Tilpassning',
+      'show_ui' => true,
+      'query_var' => true,
+      'rewrite' => array( 'slug' => 'tilpassning' ),
+      'show_admin_column' => false,
+      'labels' => array (
+        'search_items' => 'Tilpassning',
         'popular_items' => '',
         'all_items' => '',
         'parent_item' => '',
