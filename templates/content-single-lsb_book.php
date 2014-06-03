@@ -3,17 +3,25 @@
     <header>
       <h2 class="entry-title"><?php the_title(); ?></h2>
       <p class="meta">
-        Forfatter: <?php the_terms($post->ID, 'lsb_tax_author') ?>
+        <?php if(get_the_terms($post->ID, 'lsb_tax_author')): ?>
+          Forfatter: <?php the_terms($post->ID, 'lsb_tax_author') ?>
+          <br/>
+        <?php endif; ?>
+
         <?php if(get_the_terms($post->ID, 'lsb_tax_illustrator')): ?>
-          <br/>
           Illustratør: <?php the_terms($post->ID, 'lsb_tax_illustrator') ?>
-        <?php endif; ?>
-        <?php if(get_the_terms($post->ID, 'lsb_tax_translator')): ?>
           <br/>
-          Oversetter: <?php the_terms($post->ID, 'lsb_tax_translator') ?>
         <?php endif; ?>
-        <br/>
-        Forlag: <?php the_terms($post->ID, 'lsb_tax_publisher') ?><br/>
+
+        <?php if(get_the_terms($post->ID, 'lsb_tax_translator')): ?>
+          Oversetter: <?php the_terms($post->ID, 'lsb_tax_translator') ?>
+          <br/>
+        <?php endif; ?>
+
+        <?php if(get_the_terms($post->ID, 'lsb_tax_publisher')): ?>
+          Forlag: <?php the_terms($post->ID, 'lsb_tax_publisher') ?>
+          <br/>
+        <?php endif; ?>
       </p>
     </header>
     <p><?php the_field('lsb_review'); ?></p>
