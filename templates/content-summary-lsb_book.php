@@ -1,6 +1,11 @@
 <article <?php post_class(); ?>>
   <div class="entry-image">
-    <a href="<?php the_permalink(); ?>"><img src="http://dummyimage.com/235x310/aaaaaa/fff&text=Cover"></img></a>
+    <a href="<?php the_permalink(); ?>">
+      <?php if ( has_post_thumbnail()) : ?>
+        <?php the_post_thumbnail('medium'); ?></img></a>
+      <?php else : ?>
+        <img src="http://dummyimage.com/300x450/eeeeee/eeeeee.jpg"></img>
+      <?php endif; ?>
   </div>
   <header>
     <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

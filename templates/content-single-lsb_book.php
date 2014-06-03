@@ -1,6 +1,10 @@
 <article <?php post_class(); ?>>
   <div class="entry-image">
-    <img src="http://dummyimage.com/440x640/aaaaaa/fff&text=Cover"></img>
+    <?php if ( has_post_thumbnail()) : ?>
+      <?php the_post_thumbnail('large'); ?></img></a>
+    <?php else : ?>
+      <img src="http://dummyimage.com/300x450/eeeeee/eeeeee.jpg"></img>
+    <?php endif; ?>
   </div>
   <header>
     <h2 class="entry-title"><?php the_title(); ?></h2>
