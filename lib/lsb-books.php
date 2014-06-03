@@ -26,7 +26,7 @@ function register_post_type_lsb_book() {
       'query_var' => true,
       'has_archive' => true,
       'menu_position' => '5',
-      'supports' => array('title','excerpt','comments','revisions','author'),
+      'supports' => array('title','excerpt','comments','revisions','author','thumbnail'),
       'labels' => array (
         'name' => 'Bøker',
         'singular_name' => 'Bok',
