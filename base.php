@@ -41,9 +41,11 @@
       <?php include roots_template_path(); ?>
   </main><!-- /.main -->
 
-  <footer class="footer main wrap container" role="contentinfo">
-        <?php dynamic_sidebar('sidebar-footer'); ?>
-        <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+  <footer class="footer main" role="contentinfo">
+    <div class="wrap container">
+      <?php dynamic_sidebar('sidebar-footer'); ?>
+      <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+    </div>
   </footer>
 
   <?php wp_footer(); ?>

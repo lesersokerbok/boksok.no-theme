@@ -23,14 +23,16 @@
     <p class="meta">
       ISBN: <?php the_field('lsb_isbn'); ?><br/>
       Utgitt: <?php the_field('lsb_published_year'); ?><br/>
-      Antall sider: <?php the_field('lsb_pages'); ?>
-      Passr for: <?php the_terms($post->ID, 'lsb_tax_age') ?>
+      Antall sider: <?php the_field('lsb_pages'); ?><br/>
+      Passer for: <?php the_terms($post->ID, 'lsb_tax_age') ?>
     </p>
   </div>
   <div class="entry-image">
-    <?php if ( has_post_thumbnail()) : ?>
-      <?php the_post_thumbnail('large'); ?></img></a>
-    <?php else : ?>
+    <?php if ( has_post_thumbnail() && get_field('lsb_look_inside')): ?>
+      <a href="<?php the_field('lsb_look_inside'); ?>" target="_blank"><?php the_post_thumbnail('large'); ?></img></a>
+    <?php elseif (has_post_thumbnail()): ?>
+      <?php the_post_thumbnail('large'); ?></img>
+    <?php else: ?>
       <img src="http://dummyimage.com/300x450/eeeeee/eeeeee.jpg"></img>
     <?php endif; ?>
   </div>
