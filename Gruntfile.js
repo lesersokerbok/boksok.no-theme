@@ -60,28 +60,19 @@ module.exports = function(grunt) {
         }
       }
     },
-    version: {
-      options: {
-        file: 'lib/scripts.php',
-        css: 'assets/css/main.min.css',
-        cssHandle: 'roots_main',
-        js: 'assets/js/scripts.min.js',
-        jsHandle: 'roots_scripts'
-      }
-    },
     watch: {
       less: {
         files: [
           'assets/less/*.less',
           'assets/less/bootstrap/*.less'
         ],
-        tasks: ['less', 'version']
+        tasks: ['less']
       },
       js: {
         files: [
           '<%= jshint.all %>'
         ],
-        tasks: ['jshint', 'uglify', 'version']
+        tasks: ['jshint', 'uglify']
       },
       livereload: {
         // Browser live reloading
@@ -123,7 +114,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-wp-version');
   grunt.loadNpmTasks('grunt-sftp-deploy');
 
 
@@ -131,8 +121,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'clean',
     'less',
-    'uglify',
-    'version'
+    'uglify'
   ]);
   grunt.registerTask('dev', [
     'watch'
