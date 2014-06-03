@@ -10,9 +10,13 @@
     <h2 class="entry-title"><?php the_title(); ?></h2>
     <p class="meta">
       <?php the_terms($post->ID, 'lsb_tax_author') ?>
-      <?php if(get_terms($post->ID, 'lsb_tax_illustrator')): ?>
+      <?php if(get_the_terms($post->ID, 'lsb_tax_illustrator')): ?>
         <br/>
         Illustratør: <?php the_terms($post->ID, 'lsb_tax_illustrator') ?>
+      <?php endif; ?>
+      <?php if(get_the_terms($post->ID, 'lsb_tax_translator')): ?>
+        <br/>
+        Oversetter: <?php the_terms($post->ID, 'lsb_tax_translator') ?>
       <?php endif; ?>
     </p>
   </header>
