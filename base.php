@@ -7,31 +7,47 @@
     </div>
   <![endif]-->
 
-  <div class="wrap container" role="document">
+  <header class="banner navbar navbar-default navbar-static-top" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
+      </div>
 
-    <div class="page-header">
-      <h1>
-        <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
-        <?php if(is_archive()) : ?>
-          <small><?php single_cat_title(); ?></small>
-        <?php endif; ?>
-      </h1>
+      <nav class="collapse navbar-collapse" role="navigation">
+        <?php
+          if (has_nav_menu('primary_navigation')) :
+            wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav'));
+          endif;
+        ?>
+        <div class="navbar-right">
+          <?php
+            if (has_nav_menu('secondary_navigation')) :
+              wp_nav_menu(array('theme_location' => 'secondary_navigation', 'menu_class' => 'nav navbar-nav'));
+            endif;
+          ?>
+        </div>
+      </nav>
+
     </div>
+  </header>
 
-
-    <main class="main" role="main">
+  <main class="main wrap container" role="main">
       <?php include roots_template_path(); ?>
-    </main><!-- /.main -->
+  </main><!-- /.main -->
 
-  <footer class="content-info" role="contentinfo">
+  <footer class="footer main wrap container" role="contentinfo">
         <?php dynamic_sidebar('sidebar-footer'); ?>
         <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
   </footer>
 
   <?php wp_footer(); ?>
 
-
-  </div><!-- /.wrap -->
 
 </body>
 </html>

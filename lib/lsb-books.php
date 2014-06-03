@@ -11,6 +11,13 @@ add_action('init', 'register_tax_lsb_customization');
 add_action('init', 'register_tax_lsb_topic');
 add_action('init', 'register_tax_lsb_language');
 
+function custom_conference_in_home_loop( $query ) {
+ if ( is_home() && $query->is_main_query() )
+   $query->set( 'post_type', array( 'lsb_book') );
+   return $query;
+}
+add_filter( 'pre_get_posts', 'custom_conference_in_home_loop' );
+
 function register_post_type_lsb_book() {
   register_post_type('lsb_book',
     array(

@@ -1,4 +1,4 @@
-<article <?php post_class(); ?>>
+<article <?php post_class('summary'); ?>>
   <div class="entry-image">
     <a href="<?php the_permalink(); ?>">
       <?php if ( has_post_thumbnail()) : ?>
