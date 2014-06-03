@@ -3,6 +3,7 @@
 add_action('init', 'register_post_type_lsb_book');
 add_action('init', 'register_tax_lsb_author');
 add_action('init', 'register_tax_lsb_illustrator');
+add_action('init', 'register_tax_lsb_translator');
 add_action('init', 'register_tax_lsb_publisher');
 add_action('init', 'register_tax_lsb_genre');
 add_action('init', 'register_tax_lsb_age');
@@ -88,6 +89,35 @@ function register_tax_lsb_illustrator() {
     	'show_admin_column' => false,
     	'labels' => array (
         'search_items' => 'Illustratør',
+        'popular_items' => '',
+        'all_items' => '',
+        'parent_item' => '',
+        'parent_item_colon' => '',
+        'edit_item' => '',
+        'update_item' => '',
+        'add_new_item' => '',
+        'new_item_name' => '',
+        'separate_items_with_commas' => '',
+        'add_or_remove_items' => '',
+        'choose_from_most_used' => '',
+      )
+    )
+  );
+}
+
+function register_tax_lsb_translator() {
+  register_taxonomy( 'lsb_tax_translator',
+    array(
+      0 => 'lsb_book',
+    ),
+    array( 'hierarchical' => false,
+      'label' => 'Oversetter',
+      'show_ui' => true,
+      'query_var' => true,
+      'rewrite' => array( 'slug' => 'oversetter' ),
+      'show_admin_column' => false,
+      'labels' => array (
+        'search_items' => 'Oversetter',
         'popular_items' => '',
         'all_items' => '',
         'parent_item' => '',
