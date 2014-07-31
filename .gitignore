@@ -2,9 +2,9 @@
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
 
 wp-content/themes/boksok.no-theme/node_modules
-wp-content/themes/boksok.no-theme/assets/css/main.min.css.map
-wp-content/themes/boksok.no-theme/assets/css/main.min.css
-wp-content/themes/boksok.no-theme/assets/js/scripts.min.js
+#wp-content/themes/boksok.no-theme/assets/css/main.min.css.map
+#wp-content/themes/boksok.no-theme/assets/css/main.min.css
+#wp-content/themes/boksok.no-theme/assets/js/scripts.min.js
 wp-content/themes/boksok.no-theme/.ftppass
 
 *~
